@@ -23,13 +23,23 @@ Train the model :
 
 On step 3 in jupyter notebook, change this code : 
 
+
+```
 # Define embedding layer for description
+
 desc_embedding = Embedding(input_dim=max_words_desc, output_dim=64, input_length=max_len_desc)(desc_input)
+
+```
 
 into : 
 
+```
+
 # Define embedding layer for description
+
 desc_embedding = Embedding(input_dim=max_words_desc, output_dim=64, input_length=max_len_desc, weights=[embeddings_matrix], trainable=False)(desc_input)
+
+```
 
 and then we can re-train the model
 
